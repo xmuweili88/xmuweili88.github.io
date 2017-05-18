@@ -50,7 +50,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-05-18T04:27:24.000Z"><a href="/2017/05/17/hello-world/">05-17-2017</a></time>
+        <time datetime="2017-05-18T04:32:00.000Z"><a href="/2017/05/17/hello-world/">05-17-2017</a></time>
       
       
   
@@ -63,7 +63,6 @@
         <h2 id="Welcome_to_AndroidImageLearning"><a href="#Welcome_to_AndroidImageLearning" class="headerlink" title="Welcome to AndroidImageLearning"></a>Welcome to AndroidImageLearning</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">AndroidImageLearnig</a>! This is the very first post of this blog. </p>
 <p>With the develpment of deep leaning,<br>there are tons of crazy fancy stuffs going on in this computer vision industry nowadays.<br>However, these fanciness does require a lots of computing power to support its back.<br>I always curious about how we can achieve given the power of a cell phone,<br>which most people have on their hand.<br>Therefore, I am create this blog to record my exploration about<br>how current state-of-the-art vision/leaning techniques can be use to<br>develop some interesting application on android mobile devices.</p>
 <h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro."></a>Intro.</h2><p>In this tutorial, I will show the procress how to develop a very simple android app that draw a chessboard on your screen. </p>
-<img src="https://raw.githubusercontent.com/xmuweili88/AndroidCV_Tutorial_1/master/ScreenCapture/device-2017-05-13-103903.png" class="full-image" width="360">
 <p><img src="https://raw.githubusercontent.com/xmuweili88/AndroidCV_Tutorial_1/master/ScreenCapture/device-2017-05-13-103903.png" width="360"></p>
 <p>It is not fancy (at this moment), but going through the process you will learn:  </p>
 <ul>
@@ -79,9 +78,13 @@
 <p>Download current version 2.3.2<br><a href="https://dl.google.com/dl/android/studio/ide-zips/2.3.2.0/android-studio-ide-162.3934792-linux.zip" target="_blank" rel="external">android-studio-ide-162.3934792-linux.zip</a></p>
 <h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p>When first time run Android Studio after the intallation, you will see a welcome wizard.<br>We can simply select <strong>Standard Setup</strong> and processed to finish.<br>There are coupon more tools are needed to support native C/C++ development.  </p>
 <ul>
-<li>Open the SDK Manager at Android Studio Start Page<br><img src="https://www.evernote.com/l/AJfUrqHH6IJNyKM2GdAK05bY8wRWtTxSAUwB/image.pngg" width="640"></li>
-<li>Open Andorid SDK -&gt; SDK Tools, select <strong>CMake</strong>, <strong>LLDB</strong> and <strong>NDK</strong>, hit apply.<br><img src="https://www.evernote.com/l/AJejkwRcMYFFrLgCnJ5v3ILgPQMLEsk82xkB/image.png" width="640"></li>
+<li>Open the SDK Manager at Android Studio Start Page</li>
 </ul>
+<p><img src="https://www.evernote.com/l/AJfUrqHH6IJNyKM2GdAK05bY8wRWtTxSAUwB/image.pngg" width="640"></p>
+<ul>
+<li>Open Andorid SDK -&gt; SDK Tools, select <strong>CMake</strong>, <strong>LLDB</strong> and <strong>NDK</strong>, hit apply.</li>
+</ul>
+<p><img src="https://www.evernote.com/l/AJejkwRcMYFFrLgCnJ5v3ILgPQMLEsk82xkB/image.png" width="640"></p>
 <h2 id="Creating_The_Chessboard_App"><a href="#Creating_The_Chessboard_App" class="headerlink" title="Creating The Chessboard App."></a>Creating The Chessboard App.</h2><h2 id="Install_OpenCV_Native_Library"><a href="#Install_OpenCV_Native_Library" class="headerlink" title="Install OpenCV Native Library"></a>Install OpenCV Native Library</h2><h2 id="Create_A_Bitmap_Image_and_Draw_The_Chessboard"><a href="#Create_A_Bitmap_Image_and_Draw_The_Chessboard" class="headerlink" title="Create A Bitmap Image and Draw The Chessboard"></a>Create A Bitmap Image and Draw The Chessboard</h2><h2 id="Create_A_TextureView_To_Display_The_Image"><a href="#Create_A_TextureView_To_Display_The_Image" class="headerlink" title="Create A TextureView To Display The Image"></a>Create A TextureView To Display The Image</h2><h2 id="Run_The_Application"><a href="#Run_The_Application" class="headerlink" title="Run The Application"></a>Run The Application</h2><h3 id="Run_on_Android_Device"><a href="#Run_on_Android_Device" class="headerlink" title="Run on Android Device"></a>Run on Android Device</h3><h3 id="Run_on_simulator"><a href="#Run_on_simulator" class="headerlink" title="Run on simulator"></a>Run on simulator</h3>
       
     </div>
@@ -107,7 +110,7 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Buscar">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:xmuweili88.github.io">
   </form>
 </div>
