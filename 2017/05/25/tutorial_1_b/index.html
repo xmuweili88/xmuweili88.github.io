@@ -6,10 +6,9 @@
   <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 2) | AndroidImageLearning</title>
   <meta name="author" content="L. W.">
   
-  <meta name="description" content="Creating The Chessboard App.
-Now we first create a project using Android Studio with an empty activity.
+  <meta name="description" content="3. Creating The Chessboard App.Now we first create a project using Android Studio with an empty activity.
 
-Remember to select the &amp;quot;Include C++ Supp">
+Remember to select the “Include C++ Support">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -54,7 +53,7 @@ Remember to select the &amp;quot;Include C++ Supp">
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-05-26T04:14:32.000Z"><a href="/2017/05/25/tutorial_1_b/">05-25-2017</a></time>
+        <time datetime="2017-05-26T04:29:21.000Z"><a href="/2017/05/25/tutorial_1_b/">05-25-2017</a></time>
       
       
   
@@ -64,25 +63,17 @@ Remember to select the &amp;quot;Include C++ Supp">
     </header>
     <div class="entry">
       
-        <h2>Creating The Chessboard App.</h2>
-<p>Now we first create a project using Android Studio with an empty activity.</p>
+        <h2 id="3-_Creating_The_Chessboard_App"><a href="#3-_Creating_The_Chessboard_App" class="headerlink" title="3. Creating The Chessboard App."></a>3. Creating The Chessboard App.</h2><p>Now we first create a project using Android Studio with an empty activity.</p>
 <ul>
-<li>Remember to select the &quot;Include C++ Support&quot; at the first page.</li>
-<li>At &quot;Customize C++ Support&quot; page, select &quot;Toolchain default&quot;.</li>
+<li>Remember to select the “Include C++ Support” at the first page. </li>
+<li>At “Customize C++ Support” page, select “Toolchain default”.</li>
 </ul>
-<h2>Install OpenCV Native Library</h2>
-<p>Open terminal and navigate to the root directoty of the project.
-In the root directly, you should able to see folder &quot;app&quot;, which contains the main soruce code of the application, and several gradle configuration files, which define the build rules.</p>
+<h2 id="4-_Install_OpenCV_Native_Library"><a href="#4-_Install_OpenCV_Native_Library" class="headerlink" title="4. Install OpenCV Native Library"></a>4. Install OpenCV Native Library</h2><p>Open terminal and navigate to the root directoty of the project.<br>In the root directly, you should able to see folder “app”, which contains the main soruce code of the application, and several gradle configuration files, which define the build rules. </p>
 <p>Run the following script to download OpenCV library.</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Creat a new folder for OpenCV</span></div><div class="line">$ mkdir Libs</div><div class="line"><span class="comment"># Download the OpenCV libaray and extract the file</span></div><div class="line">$ <span class="built_in">cd</span> Libs</div><div class="line">$ curl https://svwh.dl.sourceforge.net/project/opencvlibrary/opencv-android/3.2.0/opencv-3.2.0-android-sdk.zip | tar -xf- -C . </div><div class="line"><span class="comment"># Return to project root</span></div><div class="line">$ <span class="built_in">cd</span> ..</div></pre></td></tr></table></figure></p>
-<p>Run the following command to copy the library files into the project.</p>
-<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Copy OpenCV Jni Library to the android project</span></div><div class="line">$ mkdir app/src/main/jniLibs &amp;&amp; \</div><div class="line">$ cp -R Libs/OpenCV-android-sdk/sdk/native/libs/. app/src/main/jniLibs/.</div></pre></td></tr></table></figure></p>
-<h2>Create A Bitmap Image and Draw The Chessboard</h2>
-<h2>Create A TextureView To Display The Image</h2>
-<h2>Run The Application</h2>
-<h3>Run on Android Device</h3>
-<h3>Run on simulator</h3>
-
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Creat a new folder for OpenCV</span></div><div class="line">$ mkdir Libs</div><div class="line"><span class="comment"># Download the OpenCV libaray and extract the file</span></div><div class="line">$ <span class="built_in">cd</span> Libs</div><div class="line">$ curl https://svwh.dl.sourceforge.net/project/opencvlibrary/opencv-android/3.2.0/opencv-3.2.0-android-sdk.zip | tar -xf- -C . </div><div class="line"><span class="comment"># Return to project root</span></div><div class="line">$ <span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
+<p>Run the following command to copy the library files into the project. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Copy OpenCV Jni Library to the android project</span></div><div class="line">$ mkdir app/src/main/jniLibs &amp;&amp; \</div><div class="line">$ cp -R Libs/OpenCV-android-sdk/sdk/native/libs/. app/src/main/jniLibs/.</div></pre></td></tr></table></figure>
+<h3 id="4-1_Configuration_in_CMake"><a href="#4-1_Configuration_in_CMake" class="headerlink" title="4.1 Configuration in CMake"></a>4.1 Configuration in CMake</h3><h3 id="4-2_Configuration_in_build-gradle"><a href="#4-2_Configuration_in_build-gradle" class="headerlink" title="4.2 Configuration in build.gradle"></a>4.2 Configuration in build.gradle</h3><h2 id="Create_A_Bitmap_Image_and_Draw_The_Chessboard"><a href="#Create_A_Bitmap_Image_and_Draw_The_Chessboard" class="headerlink" title="Create A Bitmap Image and Draw The Chessboard"></a>Create A Bitmap Image and Draw The Chessboard</h2><h2 id="Create_A_TextureView_To_Display_The_Image"><a href="#Create_A_TextureView_To_Display_The_Image" class="headerlink" title="Create A TextureView To Display The Image"></a>Create A TextureView To Display The Image</h2><h2 id="Run_The_Application"><a href="#Run_The_Application" class="headerlink" title="Run The Application"></a>Run The Application</h2><h3 id="Run_on_Android_Device"><a href="#Run_on_Android_Device" class="headerlink" title="Run on Android Device"></a>Run on Android Device</h3><h3 id="Run_on_simulator"><a href="#Run_on_simulator" class="headerlink" title="Run on simulator"></a>Run on simulator</h3>
       
     </div>
     <footer>
@@ -115,7 +106,7 @@ In the root directly, you should able to see folder &quot;app&quot;, which conta
 
 
 <section id="comment">
-  <h1 class="title">Comments</h1>
+  <h1 class="title">Kommentare</h1>
 
   
       <div id="fb-root"></div>
@@ -138,7 +129,7 @@ In the root directly, you should able to see folder &quot;app&quot;, which conta
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:xmuweili88.github.io">
   </form>
 </div>

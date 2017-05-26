@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>AndroidImageLearning</title>
+  <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1) | AndroidImageLearning</title>
   <meta name="author" content="L. W.">
+  
+  <meta name="description" content="Welcome to AndroidImageLearningWelcome to AndroidImageLearnig! This is the very first post of this blog. 
+With the develpment of deep leaning,there ar">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1)"/>
   <meta property="og:site_name" content="AndroidImageLearning"/>
 
   
@@ -43,8 +46,7 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -54,7 +56,7 @@
       
       
   
-    <h1 class="title"><a href="/2017/05/25/tutorial_1_a/">Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1)</a></h1>
+    <h1 class="title">Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1)</h1>
   
 
     </header>
@@ -92,6 +94,24 @@
       
         
         
+        
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    
+    
+      <a class="addthis_button_tweet"></a>
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
+
       
       <div class="clearfix"></div>
     </footer>
@@ -99,56 +119,27 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">Kommentare</h1>
 
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-05-26T04:29:21.000Z"><a href="/2017/05/25/tutorial_1_b/">05-25-2017</a></time>
-      
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://xmuweili88.github.io/2017/05/25/tutorial_1_a/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
-    <h1 class="title"><a href="/2017/05/25/tutorial_1_b/">Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 2)</a></h1>
-  
+</section>
 
-    </header>
-    <div class="entry">
-      
-        <h2 id="3-_Creating_The_Chessboard_App"><a href="#3-_Creating_The_Chessboard_App" class="headerlink" title="3. Creating The Chessboard App."></a>3. Creating The Chessboard App.</h2><p>Now we first create a project using Android Studio with an empty activity.</p>
-<ul>
-<li>Remember to select the “Include C++ Support” at the first page. </li>
-<li>At “Customize C++ Support” page, select “Toolchain default”.</li>
-</ul>
-<h2 id="4-_Install_OpenCV_Native_Library"><a href="#4-_Install_OpenCV_Native_Library" class="headerlink" title="4. Install OpenCV Native Library"></a>4. Install OpenCV Native Library</h2><p>Open terminal and navigate to the root directoty of the project.<br>In the root directly, you should able to see folder “app”, which contains the main soruce code of the application, and several gradle configuration files, which define the build rules. </p>
-<p>Run the following script to download OpenCV library.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Creat a new folder for OpenCV</span></div><div class="line">$ mkdir Libs</div><div class="line"><span class="comment"># Download the OpenCV libaray and extract the file</span></div><div class="line">$ <span class="built_in">cd</span> Libs</div><div class="line">$ curl https://svwh.dl.sourceforge.net/project/opencvlibrary/opencv-android/3.2.0/opencv-3.2.0-android-sdk.zip | tar -xf- -C . </div><div class="line"><span class="comment"># Return to project root</span></div><div class="line">$ <span class="built_in">cd</span> ..</div></pre></td></tr></table></figure>
-<p>Run the following command to copy the library files into the project. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Copy OpenCV Jni Library to the android project</span></div><div class="line">$ mkdir app/src/main/jniLibs &amp;&amp; \</div><div class="line">$ cp -R Libs/OpenCV-android-sdk/sdk/native/libs/. app/src/main/jniLibs/.</div></pre></td></tr></table></figure>
-<h3 id="4-1_Configuration_in_CMake"><a href="#4-1_Configuration_in_CMake" class="headerlink" title="4.1 Configuration in CMake"></a>4.1 Configuration in CMake</h3><h3 id="4-2_Configuration_in_build-gradle"><a href="#4-2_Configuration_in_build-gradle" class="headerlink" title="4.2 Configuration in build.gradle"></a>4.2 Configuration in build.gradle</h3><h2 id="Create_A_Bitmap_Image_and_Draw_The_Chessboard"><a href="#Create_A_Bitmap_Image_and_Draw_The_Chessboard" class="headerlink" title="Create A Bitmap Image and Draw The Chessboard"></a>Create A Bitmap Image and Draw The Chessboard</h2><h2 id="Create_A_TextureView_To_Display_The_Image"><a href="#Create_A_TextureView_To_Display_The_Image" class="headerlink" title="Create A TextureView To Display The Image"></a>Create A TextureView To Display The Image</h2><h2 id="Run_The_Application"><a href="#Run_The_Application" class="headerlink" title="Run The Application"></a>Run The Application</h2><h3 id="Run_on_Android_Device"><a href="#Run_on_Android_Device" class="headerlink" title="Run on Android Device"></a>Run on Android Device</h3><h3 id="Run_on_simulator"><a href="#Run_on_simulator" class="headerlink" title="Run on simulator"></a>Run on simulator</h3>
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
@@ -181,7 +172,7 @@ var disqus_shortname = 'https-xmuweili88-github-io';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
