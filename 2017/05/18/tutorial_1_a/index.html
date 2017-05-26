@@ -6,8 +6,10 @@
   <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1) | AndroidImageLearning</title>
   <meta name="author" content="L. W.">
   
-  <meta name="description" content="Welcome to AndroidImageLearningWelcome to AndroidImageLearnig! This is the very first post of this blog. 
-With the develpment of deep leaning,there ar">
+  <meta name="description" content="Welcome to AndroidImageLearning
+Welcome to AndroidImageLearnig! This is the very first post of this blog.
+With the develpment of deep leaning,
+there a">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -62,31 +64,52 @@ With the develpment of deep leaning,there ar">
     </header>
     <div class="entry">
       
-        <h2 id="Welcome_to_AndroidImageLearning"><a href="#Welcome_to_AndroidImageLearning" class="headerlink" title="Welcome to AndroidImageLearning"></a>Welcome to AndroidImageLearning</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">AndroidImageLearnig</a>! This is the very first post of this blog. </p>
-<p>With the develpment of deep leaning,<br>there are tons of crazy fancy stuffs going on in this computer vision industry nowadays.<br>However, these fanciness does require a lots of computing power to support its back.<br>I always curious about how we can achieve given the power of a cell phone,<br>which most people have on their hand.<br>Therefore, I am create this blog to record my exploration about<br>how current state-of-the-art vision/leaning techniques can be use to<br>develop some interesting application on android mobile devices.</p>
-<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro."></a>Intro.</h2><p>In this tutorial, I will show the procress how to develop a very simple android app that draw a chessboard on your screen. </p>
-<p><img src="https://raw.githubusercontent.com/xmuweili88/AndroidCV_Tutorial_1/master/ScreenCapture/device-2017-05-13-103903.png" width="360"></p>
-<p>It is not fancy (at this moment), but going through the process you will learn:  </p>
+        <h2>Welcome to AndroidImageLearning</h2>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">AndroidImageLearnig</a>! This is the very first post of this blog.</p>
+<p>With the develpment of deep leaning,
+there are tons of crazy fancy stuffs going on in this computer vision industry nowadays.
+However, these fanciness does require a lots of computing power to support its back.
+I always curious about how we can achieve given the power of a cell phone,
+which most people have on their hand.
+Therefore, I am create this blog to record my exploration about
+how current state-of-the-art vision/leaning techniques can be use to
+develop some interesting application on android mobile devices.</p>
+<h2>Intro.</h2>
+<p>In this tutorial, I will show the procress how to develop a very simple android app that draw a chessboard on your screen.</p>
+<p>&lt;img src=&quot;https://raw.githubusercontent.com/xmuweili88/AndroidCV_Tutorial_1/master/ScreenCapture/device-2017-05-13-103903.png&quot; width=360&gt;</p>
+<p>It is not fancy (at this moment), but going through the process you will learn:</p>
 <ul>
-<li>How to setup your computer for android application develop. </li>
-<li>How to import openCV native library to your android project. </li>
+<li>How to setup your computer for android application develop.</li>
+<li>How to import openCV native library to your android project.</li>
 </ul>
-<p>You might ask: what is the <strong>Native Library</strong>?<br>As we know, the Android Application are developed in <strong>JAVA</strong>, the native library simply means the <strong>C/C++</strong> library that can be used in JAVA code. People use native library acause in many cases C/C++ library can much more efficirnt than JAVA library, especilly for tasks like image processig. </p>
-<p>The source code this tutorial is avaiable in <a href="https://github.com/xmuweili88/AndroidCV_Tutorial_1" target="_blank" rel="external">https://github.com/xmuweili88/AndroidCV_Tutorial_1</a>. </p>
-<h2 id="IDE_3A_Android_Studio"><a href="#IDE_3A_Android_Studio" class="headerlink" title="IDE: Android Studio"></a>IDE: Android Studio</h2><p><a href="https://developer.android.com/studio/install.html" target="_blank" rel="external">Android studio</a><br>the official IDE for developing android applications.<br>Personally I write code using Android Stuio daily, besides it’s hungriness for the RAM,<br>it is the perfect tool for writing Android app. </p>
-<h3 id="Install_On_Mac"><a href="#Install_On_Mac" class="headerlink" title="Install On Mac"></a>Install On Mac</h3><p>Download Current Version 2.3.2<br><a href="https://dl.google.com/dl/android/studio/install/2.3.2.0/android-studio-ide-162.3934792-mac.dmg" target="_blank" rel="external">android-studio-ide-162.3934792-mac.dmg</a>.  </p>
-<h3 id="Install_On_Ubuntu"><a href="#Install_On_Ubuntu" class="headerlink" title="Install On Ubuntu"></a>Install On Ubuntu</h3><p>Install required library first</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386</div></pre></td></tr></table></figure>
-<p>Download current version 2.3.2<br><a href="https://dl.google.com/dl/android/studio/ide-zips/2.3.2.0/android-studio-ide-162.3934792-linux.zip" target="_blank" rel="external">android-studio-ide-162.3934792-linux.zip</a></p>
-<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p>When first time run Android Studio after the intallation, you will see a welcome wizard.<br>We can simply select <strong>Standard Setup</strong> and processed to finish.<br>There are coupon more tools are needed to support native C/C++ development.  </p>
+<p>You might ask: what is the <strong>Native Library</strong>?<br>
+As we know, the Android Application are developed in <strong>JAVA</strong>, the native library simply means the <strong>C/C++</strong> library that can be used in JAVA code. People use native library acause in many cases C/C++ library can much more efficirnt than JAVA library, especilly for tasks like image processig.</p>
+<p>The source code this tutorial is avaiable in <a href="https://github.com/xmuweili88/AndroidCV_Tutorial_1" target="_blank" rel="external">https://github.com/xmuweili88/AndroidCV_Tutorial_1</a>.</p>
+<h2>IDE: Android Studio</h2>
+<p><a href="https://developer.android.com/studio/install.html" target="_blank" rel="external">Android studio</a>
+the official IDE for developing android applications.
+Personally I write code using Android Stuio daily, besides it's hungriness for the RAM,
+it is the perfect tool for writing Android app.</p>
+<h3>Install On Mac</h3>
+<p>Download Current Version 2.3.2
+<a href="https://dl.google.com/dl/android/studio/install/2.3.2.0/android-studio-ide-162.3934792-mac.dmg" target="_blank" rel="external">android-studio-ide-162.3934792-mac.dmg</a>.</p>
+<h3>Install On Ubuntu</h3>
+<p>Install required library first</p>
+<p><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386</div></pre></td></tr></table></figure></p>
+<p>Download current version 2.3.2
+<a href="https://dl.google.com/dl/android/studio/ide-zips/2.3.2.0/android-studio-ide-162.3934792-linux.zip" target="_blank" rel="external">android-studio-ide-162.3934792-linux.zip</a></p>
+<h3>Configuration</h3>
+<p>When first time run Android Studio after the intallation, you will see a welcome wizard.<br>
+We can simply select <strong>Standard Setup</strong> and processed to finish.
+There are coupon more tools are needed to support native C/C++ development.</p>
 <ul>
 <li>Open the SDK Manager at Android Studio Start Page</li>
 </ul>
-<p><img src="https://www.evernote.com/l/AJfUrqHH6IJNyKM2GdAK05bY8wRWtTxSAUwB/image.pngg" width="640"></p>
+<p>&lt;img src=&quot;https://www.evernote.com/l/AJfUrqHH6IJNyKM2GdAK05bY8wRWtTxSAUwB/image.pngg&quot; width=640&gt;</p>
 <ul>
 <li>Open Andorid SDK -&gt; SDK Tools, select <strong>CMake</strong>, <strong>LLDB</strong> and <strong>NDK</strong>, hit apply.</li>
 </ul>
-<p><img src="https://www.evernote.com/l/AJejkwRcMYFFrLgCnJ5v3ILgPQMLEsk82xkB/image.png" width="640"></p>
+<p>&lt;img src=&quot;https://www.evernote.com/l/AJejkwRcMYFFrLgCnJ5v3ILgPQMLEsk82xkB/image.png&quot; width=640&gt;</p>
 
       
     </div>
@@ -120,7 +143,7 @@ With the develpment of deep leaning,there ar">
 
 
 <section id="comment">
-  <h1 class="title">Kommentare</h1>
+  <h1 class="title">Comments</h1>
 
   
       <div id="fb-root"></div>
@@ -143,7 +166,7 @@ With the develpment of deep leaning,there ar">
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Suche">
+    <input type="search" name="q" results="0" placeholder="Search">
     <input type="hidden" name="q" value="site:xmuweili88.github.io">
   </form>
 </div>

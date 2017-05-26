@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xmuweili88.github.io/"/>
-  <updated>2017-05-25T05:47:28.000Z</updated>
+  <updated>2017-05-26T04:14:32.000Z</updated>
   <id>https://xmuweili88.github.io/</id>
   
   <author>
@@ -17,14 +17,17 @@
   
   <entry>
     <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 2)</title>
-    <link href="https://xmuweili88.github.io/2017/05/24/tutorial_1_b/"/>
-    <id>https://xmuweili88.github.io/2017/05/24/tutorial_1_b/</id>
-    <published>2017-05-25T05:47:28.000Z</published>
-    <updated>2017-05-25T05:47:28.000Z</updated>
+    <link href="https://xmuweili88.github.io/2017/05/25/tutorial_1_b/"/>
+    <id>https://xmuweili88.github.io/2017/05/25/tutorial_1_b/</id>
+    <published>2017-05-26T04:14:32.000Z</published>
+    <updated>2017-05-26T04:14:32.000Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Creating_The_Chessboard_App&quot;&gt;&lt;a href=&quot;#Creating_The_Chessboard_App&quot; class=&quot;headerlink&quot; title=&quot;Creating The Chessboard App.&quot;&gt;&lt;/a&gt;Crea
+      &lt;h2&gt;Creating The Chessboard App.&lt;/h2&gt;
+&lt;p&gt;Now we first create a project using Android Studio with an empty activity.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Remember to
     
     </summary>
     
@@ -40,7 +43,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Welcome_to_AndroidImageLearning&quot;&gt;&lt;a href=&quot;#Welcome_to_AndroidImageLearning&quot; class=&quot;headerlink&quot; title=&quot;Welcome to AndroidImageLearnin
+      &lt;h2&gt;Welcome to AndroidImageLearning&lt;/h2&gt;
+&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AndroidImageLearnig&lt;/a&gt;! Th
     
     </summary>
     
