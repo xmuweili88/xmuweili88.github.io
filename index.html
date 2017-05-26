@@ -50,7 +50,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-05-26T05:11:18.000Z"><a href="/2017/05/25/tutorial_1_b/">05-25-2017</a></time>
+        <time datetime="2017-05-26T05:12:42.000Z"><a href="/2017/05/25/tutorial_1_b/">05-25-2017</a></time>
       
       
   
@@ -75,7 +75,7 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set(pathToProject <span class="string">"$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/../"</span>)</div><div class="line">set(pathToOpenCv $&#123;pathToProject&#125;/Libs/OpenCV-android-sdk)</div></pre></td></tr></table></figure>
 <p>After the line of <em>cmake_minimum_required(VERSION 3.4.1)</em>, add the following</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">set(CMAKE_VERBOSE_MAKEFILE on)</div><div class="line">set(CMAKE_CXX_FLAGS <span class="string">"$&#123;CMAKE_CXX_FLAGS&#125; -std=gnu++11"</span>)</div><div class="line">include_directories($&#123;pathToOpenCv&#125;/sdk/native/jni/<span class="keyword">include</span>)</div><div class="line">add_library( lib_opencv SHARED IMPORTED )</div><div class="line">set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION $&#123;pathToProject&#125;/app/src/main/jniLibs/$&#123;ANDROID_ABI&#125;/libopencv_java3.so)</div></pre></td></tr></table></figure>
-<p><code>include_directories()</code> tell the compiler to add the path of opencv headers.<br>So when we include them in native code, compiler knows where to find.<br><code>add_library()</code> adds a library to the project, and indicates the library is imported from external source.<br><code>set_target_properties()</code>gives the location of imported library. </p>
+<p><code>include_directories()</code> tell the compiler to add the path of opencv headers. So when we include them in native code, compiler knows where to find.<br><code>add_library()</code> adds a library to the project, and indicates the library is imported from external source.<br><code>set_target_properties()</code>gives the location of imported library. </p>
 <p>Finally, change the last command in the file to </p>
  <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">target_link_libraries( <span class="comment"># Specifies the target library.</span></div><div class="line">                       native-lib</div><div class="line">                       <span class="comment"># Links the target library to the opencv library</span></div><div class="line">                       lib_opencv</div><div class="line">                       $&#123;log-lib&#125;</div><div class="line">                        -ljnigraphics)</div></pre></td></tr></table></figure>
 <p>We add <code>lib_opencv</code> and <code>-ljnigraphics</code> as the end to link the target library.</p>
