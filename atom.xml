@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xmuweili88.github.io/"/>
-  <updated>2017-05-26T04:32:01.000Z</updated>
+  <updated>2017-05-26T05:09:40.000Z</updated>
   <id>https://xmuweili88.github.io/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 2)</title>
+    <link href="https://xmuweili88.github.io/2017/05/25/tutorial_1_b/"/>
+    <id>https://xmuweili88.github.io/2017/05/25/tutorial_1_b/</id>
+    <published>2017-05-26T05:09:40.000Z</published>
+    <updated>2017-05-26T05:09:40.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;3-_Creating_The_Project&quot;&gt;&lt;a href=&quot;#3-_Creating_The_Project&quot; class=&quot;headerlink&quot; title=&quot;3. Creating The Project&quot;&gt;&lt;/a&gt;3. Creating The P
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 1)</title>
@@ -25,22 +41,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;Welcome_to_AndroidImageLearning&quot;&gt;&lt;a href=&quot;#Welcome_to_AndroidImageLearning&quot; class=&quot;headerlink&quot; title=&quot;Welcome to AndroidImageLearnin
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Tutorial 1 - Display Chessboard using Android Studio and OpenCV 3.2 with Native JNI (Part 2)</title>
-    <link href="https://xmuweili88.github.io/2017/05/25/tutorial_1_b/"/>
-    <id>https://xmuweili88.github.io/2017/05/25/tutorial_1_b/</id>
-    <published>2017-05-26T04:29:21.000Z</published>
-    <updated>2017-05-26T04:29:21.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;3-_Creating_The_Chessboard_App&quot;&gt;&lt;a href=&quot;#3-_Creating_The_Chessboard_App&quot; class=&quot;headerlink&quot; title=&quot;3. Creating The Chessboard App.&quot;
     
     </summary>
     
